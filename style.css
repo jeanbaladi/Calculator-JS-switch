@@ -1,0 +1,192 @@
+*, *:before *:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* variable */
+:root {
+    --color-text-btn: #682828;
+    --color-bg-btn-hover-top: #b6b5b5;
+    --color-bg-btn-hover-bottom: #424141;
+    --color-border-elements: #000000;
+    --color-bg-calculator: #b3bcc3;
+    --color-border-calculator: #42314c;
+    --color-bg-btn-close: #E04343;
+    --color-icon-maximize: #898989;
+    --color-bg-btn-minimize-hover: #3665B3;
+    --color-special-bottom : #5a4d77;
+}
+.calculator {
+    position: relative;
+    border: 5px solid var(--color-border-calculator);
+    border-top-width:  0;
+    background-color: var(--color-bg-calculator);
+    max-width: 327px;
+    margin: 50px auto 0;
+    box-shadow: 0 0 1px var(--color-border-elements), 0 0 03px var(--color-border-elements);
+}
+.window-controls {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--color-border-calculator);
+    font-family: arial;
+    padding-bottom: 7px;
+}
+.window-controls--left {
+    padding-top: 14px;
+    padding-left: 3px;
+}
+.window-controls--right span{
+    display: inline-block;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+.window-controls--right span:not(:last-child){
+    padding-left: 7px;
+    padding-right: 7px;
+    transition: 1s all linear;
+}
+.window-controls--right span:first-child:hover {
+    background-color: var(--color-bg-btn-minimize-hover);
+    color:white;
+}
+.window-controls--right span:nth-child(2){
+    color: var(--color-icon-maximize);
+}
+.window-controls--right span:last-child{
+    padding-left: 14px;
+    padding-right: 14px;
+    background: var(--color-bg-btn-close);
+    color:white
+}
+.display, .keyboard__btn {
+    border: 1px solid var(--color-border-elements);
+    border-radius: 3px;
+    cursor: pointer;
+}
+.display {
+    margin: 12px 12px 6px;
+    background-image: linear-gradient(var(--color-bg-calculator), white); 
+    padding-bottom: 6px;
+    padding-top: 3px;
+}
+.display__top, .display__bottom {
+    display: block;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: right;
+    border: none;
+    background-color: transparent;
+    max-width: 95%;
+}
+.display__top {
+    font-size: 20px;
+    height: 23px;
+}
+.display__bottom {
+    font-size: 35px;
+    font-weight: bold;
+    height: 40px;
+}
+.keyboard {
+    margin: 0 12px 12px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.keyboard__btn {
+    width: 54.5px;
+    height:  54px;
+    text-transform: uppercase;
+    transition: .1s all linear;
+}
+.keyboard__btn:nth-child(-n+3){
+    background-color: var(--color-special-bottom);
+}
+.keyboard__btn:nth-child(1) {
+    width: 115px;
+}
+.keyboard__btn:hover {
+    background-image: linear-gradient(var(--color-bg-btn-hover-top), 
+    var(--color-bg-btn-hover-bottom));
+    box-shadow: 0 0 2px 1px var(var(--color-bg-btn-hover-bottom));
+}
+.keyboard__btn {
+    margin-right: 6px;
+}
+.keyboard__btn:not(:nth-child(17)):not(:nth-child(18)):not(:nth-child(19)) {
+    margin-bottom: 6px;
+}
+.keyboard__btn:nth-child(26) {
+    width: 115px;
+}
+.keyboard__btn:nth-child(28) {
+    width: 115px;
+    background-color: var(--color-special-bottom);
+}
+.keyboard__btn:nth-child(27) {
+    width: 115px;
+    background-color: var(--color-special-bottom);
+}
+/* --------------------------------Slice-------------------------------- */
+.slice {
+    background-color: var(--color-bg-calculator);
+    width: 190px;
+    height: 450px;
+    z-index: -1;
+    border-top: 5px solid var(--color-border-calculator);
+    border-right: 5px solid var(--color-border-calculator);
+    border-bottom: 5px solid var(--color-border-calculator);
+    display: none;  
+    overflow: auto;
+}
+.slice::-webkit-scrollbar {
+    width: 8px;
+    background-color: #ccc;
+}
+.slice::-webkit-scrollbar-thumb {
+    background: var(--color-special-bottom);
+    border-radius: 4px;
+}
+.slice::-webkit-scrollbar-thumb:hover {
+    background: #7549d4;
+}
+.position {
+    position: absolute;
+    left: 332px;
+}
+.sticky {
+    position: sticky;
+    top: 0;
+    background-color: #ccc;
+    border-bottom: 2px solid #000000;
+}
+
+.record {
+    margin-top: 5px;
+    text-align: center;
+    font-weight: 600;
+}
+.scroll {
+    overflow: scroll;
+}
+.color {
+    color:red;
+}
+
+
+
+
+
+
+
+/* :root {
+    --color-text-btn: #1F5991;
+    --color-bg-btn-hover-top: #FFEDD9;
+    --color-bg-btn-hover-bottom: #FFD574;
+    --color-border-elements: #8E9CAD;
+    --color-bg-calculator: #D9E4F1;
+    --color-border-calculator: #EAD390;
+    --color-bg-btn-close: #E04343;
+    --color-icon-maximize: #898989;
+    --color-bg-btn-minimize-hover: #3665B3;
+} */
